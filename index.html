@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Knowledge Initiatives | Advisory & Consulting</title>
+<meta name="description" content="Knowledge Initiatives — expert advisory in pensions & retirement planning, corporate governance, and housing & mortgage financing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #0e1117;
+    --ink-mid: #2c3340;
+    --ink-muted: #6b7280;
+    --paper: #f5f2ed;
+    --paper-dark: #ece8e1;
+    --white: #ffffff;
+    --gold: #b8860b;
+    --gold-light: #d4a017;
+    --gold-pale: #f9f3e3;
+    --teal: #1a4a4a;
+    --teal-light: #e4efef;
+    --border: rgba(14,17,23,0.1);
+    --border-strong: rgba(14,17,23,0.2);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── TYPOGRAPHY ── */
+  h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 200;
+    background: rgba(245,242,237,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 3rem;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: 0.3px;
+  }
+
+  .nav-logo span { color: var(--gold); }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--ink-muted);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--ink); }
+
+  .nav-cta {
+    background: var(--ink);
+    color: var(--paper) !important;
+    padding: 8px 20px;
+    border-radius: 2px;
+    font-weight: 400 !important;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--teal) !important; color: white !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 6rem 3rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    right: -80px; top: 0; bottom: 0;
+    width: 55%;
+    background: var(--teal);
+    clip-path: polygon(8% 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 520px;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+
+  .hero h1 {
+    font-size: clamp(36px, 5vw, 60px);
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--teal);
+  }
+
+  .hero-desc {
+    font-size: 16px;
+    color: var(--ink-mid);
+    max-width: 400px;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: white;
+    padding: 13px 28px;
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background 0.2s;
+    display: inline-block;
+  }
+
+  .btn-primary:hover { background: var(--gold-light); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--ink);
+    padding: 12px 28px;
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 1px solid var(--border-strong);
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.2s;
+    display: inline-block;
+  }
+
+  .btn-outline:hover { background: var(--ink); color: var(--paper); }
+
+  .hero-right {
+    position: absolute;
+    right: 0; top: 0; bottom: 0;
+    width: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    padding: 6rem 4rem 4rem;
+  }
+
+  .hero-stats-box {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 4px;
+    padding: 2.5rem;
+    color: white;
+    width: 100%;
+    max-width: 380px;
+  }
+
+  .hero-stats-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 2rem;
+  }
+
+  .hero-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .hero-stat:last-child { border-bottom: none; }
+
+  .hero-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    color: var(--gold-light);
+    font-weight: 600;
+  }
+
+  .hero-stat-label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+    text-align: right;
+    max-width: 160px;
+    line-height: 1.4;
+  }
+
+  /* ── INTRO BAND ── */
+  .intro-band {
+    background: var(--ink);
+    padding: 4rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .intro-band h2 {
+    font-size: 36px;
+    color: white;
+    line-height: 1.15;
+  }
+
+  .intro-band h2 em { color: var(--gold-light); font-style: italic; }
+
+  .intro-band p {
+    color: rgba(255,255,255,0.6);
+    font-size: 15px;
+    line-height: 1.9;
+    max-width: 600px;
+  }
+
+  /* ── SERVICES ── */
+  .services {
+    padding: 6rem 3rem;
+    background: var(--paper);
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .section-tag {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  .section-title {
+    font-size: clamp(28px, 4vw, 42px);
+    color: var(--ink);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    background: var(--border);
+  }
+
+  .service-card {
+    background: var(--white);
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+    cursor: default;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-card:hover { background: var(--gold-pale); }
+
+  .service-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    color: var(--paper-dark);
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    transition: color 0.3s;
+  }
+
+  .service-card:hover .service-num { color: var(--gold-light); opacity: 0.4; }
+
+  .service-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 1.2rem;
+  }
+
+  .service-title {
+    font-size: 22px;
+    color: var(--ink);
+    margin-bottom: 1rem;
+    line-height: 1.25;
+  }
+
+  .service-desc {
+    font-size: 14px;
+    color: var(--ink-muted);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-items {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .service-items li {
+    font-size: 12px;
+    color: var(--ink-mid);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.5;
+  }
+
+  .service-items li::before {
+    content: '—';
+    color: var(--gold);
+    flex-shrink: 0;
+    font-weight: 400;
+  }
+
+  /* ── WHY US ── */
+  .why {
+    background: var(--teal);
+    padding: 6rem 3rem;
+    color: white;
+  }
+
+  .why .section-title { color: white; }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .why-card {
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 1.5rem;
+  }
+
+  .why-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    color: var(--gold-light);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .why-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+
+  .why-desc { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.7; }
+
+  /* ── APPROACH ── */
+  .approach {
+    padding: 6rem 3rem;
+    background: var(--white);
+  }
+
+  .approach-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .approach-left h2 {
+    font-size: clamp(28px, 4vw, 42px);
+    margin-bottom: 1.5rem;
+    line-height: 1.15;
+  }
+
+  .approach-left p {
+    font-size: 15px;
+    color: var(--ink-mid);
+    line-height: 1.9;
+    margin-bottom: 1.5rem;
+  }
+
+  .approach-steps { display: flex; flex-direction: column; gap: 0; }
+
+  .approach-step {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border);
+    align-items: flex-start;
+  }
+
+  .approach-step:first-child { border-top: 1px solid var(--border); }
+
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    color: var(--gold);
+    font-weight: 600;
+    flex-shrink: 0;
+    width: 36px;
+    line-height: 1;
+    padding-top: 2px;
+  }
+
+  .step-content h4 {
+    font-size: 16px;
+    color: var(--ink);
+    margin-bottom: 4px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+  }
+
+  .step-content p { font-size: 13px; color: var(--ink-muted); line-height: 1.7; }
+
+  /* ── SECTORS ── */
+  .sectors {
+    background: var(--paper);
+    padding: 6rem 3rem;
+  }
+
+  .sectors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+
+  .sector-chip {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 1.2rem 1.5rem;
+    font-size: 13px;
+    color: var(--ink-mid);
+    font-weight: 400;
+    text-align: center;
+    transition: all 0.2s;
+  }
+
+  .sector-chip:hover {
+    background: var(--teal);
+    color: white;
+    border-color: var(--teal);
+  }
+
+  /* ── CTA ── */
+  .cta-section {
+    background: var(--gold);
+    padding: 5rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .cta-section h2 {
+    font-size: clamp(28px, 4vw, 44px);
+    color: white;
+    line-height: 1.15;
+  }
+
+  .cta-section h2 em { font-style: italic; color: rgba(255,255,255,0.7); }
+
+  .btn-white {
+    background: white;
+    color: var(--gold);
+    padding: 15px 32px;
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 2px;
+    display: inline-block;
+    white-space: nowrap;
+    transition: all 0.2s;
+  }
+
+  .btn-white:hover { background: var(--ink); color: white; }
+
+  /* ── CONTACT ── */
+  .contact {
+    padding: 6rem 3rem;
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+  }
+
+  .contact-info h2 {
+    font-size: clamp(28px, 4vw, 40px);
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-info p {
+    font-size: 15px;
+    color: var(--ink-muted);
+    line-height: 1.9;
+    margin-bottom: 2rem;
+  }
+
+  .contact-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .contact-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .contact-item-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    min-width: 70px;
+    padding-top: 2px;
+  }
+
+  .contact-item-value {
+    font-size: 14px;
+    color: var(--ink-mid);
+    line-height: 1.6;
+  }
+
+  .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
+
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+
+  .form-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    font-weight: 500;
+  }
+
+  .form-input, .form-select, .form-textarea {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 12px 14px;
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+
+  .form-input:focus, .form-select:focus, .form-textarea:focus {
+    border-color: var(--gold);
+  }
+
+  .form-textarea { resize: vertical; min-height: 120px; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  .form-submit {
+    background: var(--ink);
+    color: white;
+    padding: 14px 28px;
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background 0.2s;
+    align-self: flex-start;
+  }
+
+  .form-submit:hover { background: var(--teal); }
+
+  .form-success {
+    display: none;
+    background: var(--teal-light);
+    border: 1px solid var(--teal);
+    border-radius: 2px;
+    padding: 1rem 1.25rem;
+    font-size: 14px;
+    color: var(--teal);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.45);
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-logo span { color: var(--gold-light); }
+
+  .footer-tagline { font-size: 12px; color: rgba(255,255,255,0.35); letter-spacing: 0.5px; }
+
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .footer-links a {
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--gold-light); }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    .hero { padding: 5rem 1.5rem 3rem; flex-direction: column; }
+    .hero::before { display: none; }
+    .hero-right { display: none; }
+    .hero-content { max-width: 100%; }
+    .intro-band { grid-template-columns: 1fr; gap: 1.5rem; padding: 3rem 1.5rem; }
+    .services { padding: 4rem 1.5rem; }
+    .services-grid { grid-template-columns: 1fr; }
+    .why { padding: 4rem 1.5rem; }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .approach { padding: 4rem 1.5rem; }
+    .approach-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    .sectors { padding: 4rem 1.5rem; }
+    .cta-section { grid-template-columns: 1fr; padding: 3rem 1.5rem; }
+    .contact { grid-template-columns: 1fr; gap: 2.5rem; padding: 4rem 1.5rem; }
+    .form-row { grid-template-columns: 1fr; }
+    footer { grid-template-columns: 1fr; padding: 2rem 1.5rem; }
+    .footer-links { justify-content: flex-start; }
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-content > * {
+    animation: fadeUp 0.7s ease both;
+  }
+
+  .hero-eyebrow { animation-delay: 0.1s; }
+  .hero h1 { animation-delay: 0.25s; }
+  .hero-desc { animation-delay: 0.4s; }
+  .hero-btns { animation-delay: 0.55s; }
+  .hero-stats-box { animation: fadeUp 0.7s 0.4s ease both; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Knowledge <span>Initiatives</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#approach">Our Approach</a></li>
+    <li><a href="#sectors">Sectors</a></li>
+    <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <p class="hero-eyebrow">Advisory &amp; Consulting</p>
+    <h1>Where <em>knowledge</em> drives better outcomes</h1>
+    <p class="hero-desc">Knowledge Initiatives provides specialist advisory services in pensions, corporate governance, and housing finance — helping institutions, businesses, and individuals make decisions that endure.</p>
+    <div class="hero-btns">
+      <a href="#services" class="btn-primary">Our Services</a>
+      <a href="#contact" class="btn-outline">Speak to an Advisor</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-stats-box">
+      <div class="hero-stats-title">Our focus areas</div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">01</span>
+        <span class="hero-stat-label">Pensions &amp; Retirement Planning</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">02</span>
+        <span class="hero-stat-label">Corporate Governance</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">03</span>
+        <span class="hero-stat-label">Housing &amp; Mortgage Financing Advisory</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO BAND -->
+<section class="intro-band">
+  <h2>Built on <em>expertise</em>, guided by purpose.</h2>
+  <p>At Knowledge Initiatives, we combine deep technical knowledge with an unwavering commitment to our clients' long-term interests. Whether you are a pension fund trustee seeking strategic guidance, a board navigating governance reform, or an institution structuring housing finance solutions — we bring the rigour and independence your decisions deserve.</p>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-header">
+    <span class="section-tag">What we do</span>
+    <h2 class="section-title">Our services</h2>
+  </div>
+
+  <div class="services-grid">
+    <!-- Service 1 -->
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <svg class="service-icon" viewBox="0 0 40 40" fill="none">
+        <circle cx="20" cy="20" r="18" stroke="#b8860b" stroke-width="1.5"/>
+        <path d="M12 28 L12 20 L18 14 L24 18 L30 12" stroke="#b8860b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="18" cy="14" r="2" fill="#b8860b"/>
+      </svg>
+      <h3 class="service-title">Pensions &amp; Retirement Planning</h3>
+      <p class="service-desc">We advise pension fund trustees, sponsors, and individuals on strategy, compliance, and investment decisions that secure long-term retirement outcomes.</p>
+      <ul class="service-items">
+        <li>Pension fund governance &amp; trustee advisory</li>
+        <li>Defined benefit &amp; defined contribution scheme review</li>
+        <li>Retirement income strategy &amp; decumulation planning</li>
+        <li>Regulatory compliance &amp; reporting (NPRA, SSNIT)</li>
+        <li>Member communication &amp; education programmes</li>
+        <li>Investment policy review &amp; asset allocation</li>
+      </ul>
+    </div>
+
+    <!-- Service 2 -->
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <svg class="service-icon" viewBox="0 0 40 40" fill="none">
+        <rect x="8" y="10" width="24" height="20" rx="1.5" stroke="#b8860b" stroke-width="1.5"/>
+        <path d="M14 16 H26 M14 21 H26 M14 26 H20" stroke="#b8860b" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <h3 class="service-title">Corporate Governance</h3>
+      <p class="service-desc">We support boards, executives, and shareholders in building governance frameworks that drive accountability, transparency, and sustainable value creation.</p>
+      <ul class="service-items">
+        <li>Board effectiveness reviews &amp; evaluations</li>
+        <li>Corporate governance codes implementation</li>
+        <li>Board composition, diversity &amp; succession planning</li>
+        <li>Risk management frameworks &amp; internal controls</li>
+        <li>Shareholder engagement &amp; ESG advisory</li>
+        <li>Policy development for listed &amp; unlisted entities</li>
+      </ul>
+    </div>
+
+    <!-- Service 3 -->
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <svg class="service-icon" viewBox="0 0 40 40" fill="none">
+        <path d="M8 28 L20 12 L32 28 Z" stroke="#b8860b" stroke-width="1.5" stroke-linejoin="round"/>
+        <rect x="16" y="21" width="8" height="7" stroke="#b8860b" stroke-width="1.5"/>
+        <path d="M8 28 H32" stroke="#b8860b" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <h3 class="service-title">Housing &amp; Mortgage Financing Advisory</h3>
+      <p class="service-desc">We advise financial institutions, developers, and government agencies on structuring accessible and sustainable housing finance solutions.</p>
+      <ul class="service-items">
+        <li>Mortgage product design &amp; portfolio review</li>
+        <li>Affordable housing finance strategy</li>
+        <li>Institutional lending framework development</li>
+        <li>Housing policy advisory for public sector</li>
+        <li>Real estate investment structuring</li>
+        <li>Home ownership schemes &amp; rent-to-own design</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why">
+  <div class="section-header" style="margin-bottom:0;">
+    <span class="section-tag" style="color:rgba(255,255,255,0.4);">Why us</span>
+    <h2 class="section-title">The Knowledge Initiatives difference</h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-card">
+      <span class="why-num">15+</span>
+      <div class="why-label">Years of combined expertise</div>
+      <p class="why-desc">Our advisors bring deep professional experience across finance, law, and public policy.</p>
+    </div>
+    <div class="why-card">
+      <span class="why-num">100%</span>
+      <div class="why-label">Independent advisory</div>
+      <p class="why-desc">We are not product-sellers. Our advice is shaped entirely by your objectives.</p>
+    </div>
+    <div class="why-card">
+      <span class="why-num">3</span>
+      <div class="why-label">Specialist practice areas</div>
+      <p class="why-desc">Focused scope means deeper expertise — not shallow generalism across dozens of sectors.</p>
+    </div>
+    <div class="why-card">
+      <span class="why-num">Local</span>
+      <div class="why-label">Context-driven insight</div>
+      <p class="why-desc">We understand the regulatory, economic, and social environment our clients operate in.</p>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="approach" id="approach">
+  <div class="approach-layout">
+    <div class="approach-left">
+      <h2>How we work with clients</h2>
+      <p>Every engagement begins with listening. We take time to understand your organisation, your pressures, and your goals before we offer a single recommendation.</p>
+      <p>Our process is structured but flexible — we adapt to the complexity of your situation and the pace at which you need to move.</p>
+    </div>
+    <div class="approach-steps">
+      <div class="approach-step">
+        <span class="step-num">01</span>
+        <div class="step-content">
+          <h4>Discovery &amp; Diagnosis</h4>
+          <p>We begin with a thorough assessment of your current position, challenges, and objectives — including regulatory obligations and stakeholder expectations.</p>
+        </div>
+      </div>
+      <div class="approach-step">
+        <span class="step-num">02</span>
+        <div class="step-content">
+          <h4>Strategy Development</h4>
+          <p>We design practical, evidence-based strategies tailored to your specific context — not generic frameworks lifted from a textbook.</p>
+        </div>
+      </div>
+      <div class="approach-step">
+        <span class="step-num">03</span>
+        <div class="step-content">
+          <h4>Implementation Support</h4>
+          <p>We stay engaged through execution, providing guidance, training, and adjustments as circumstances evolve.</p>
+        </div>
+      </div>
+      <div class="approach-step">
+        <span class="step-num">04</span>
+        <div class="step-content">
+          <h4>Review &amp; Optimisation</h4>
+          <p>We measure outcomes against agreed benchmarks and refine approaches to ensure lasting impact.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTORS -->
+<section class="sectors" id="sectors">
+  <div class="section-header">
+    <span class="section-tag">Who we serve</span>
+    <h2 class="section-title">Sectors &amp; clients</h2>
+  </div>
+  <div class="sectors-grid">
+    <div class="sector-chip">Pension Fund Trustees</div>
+    <div class="sector-chip">Corporate Boards</div>
+    <div class="sector-chip">Commercial Banks</div>
+    <div class="sector-chip">Insurance Companies</div>
+    <div class="sector-chip">Government Agencies</div>
+    <div class="sector-chip">Real Estate Developers</div>
+    <div class="sector-chip">Financial Regulators</div>
+    <div class="sector-chip">Development Finance</div>
+    <div class="sector-chip">NGOs &amp; Foundations</div>
+    <div class="sector-chip">Individual Retirees</div>
+    <div class="sector-chip">Microfinance Institutions</div>
+    <div class="sector-chip">Listed Companies</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Ready to put <em>knowledge</em> to work for you?</h2>
+  <a href="#contact" class="btn-white">Start a Conversation</a>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-info">
+    <span class="section-tag" style="display:block;margin-bottom:1rem;">Contact</span>
+    <h2>Let's talk about your needs</h2>
+    <p>Whether you have a specific brief or an early-stage question, we welcome every conversation. Reach out and a member of our team will respond within one business day.</p>
+    <div class="contact-detail">
+      <div class="contact-item">
+        <span class="contact-item-label">Email</span>
+        <span class="contact-item-value">info@knowledgeinitiatives.com</span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-item-label">Phone</span>
+        <span class="contact-item-value">+233 (0) 30 000 0000</span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-item-label">Office</span>
+        <span class="contact-item-value">Accra, Ghana</span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-item-label">Hours</span>
+        <span class="contact-item-value">Monday – Friday, 8:00 am – 5:00 pm GMT</span>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">First name</label>
+          <input class="form-input" type="text" required placeholder="Your first name">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Last name</label>
+          <input class="form-input" type="text" required placeholder="Your last name">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email address</label>
+        <input class="form-input" type="email" required placeholder="you@organisation.com">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Organisation</label>
+        <input class="form-input" type="text" placeholder="Your organisation (optional)">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Service of interest</label>
+        <select class="form-select">
+          <option value="">Select a service...</option>
+          <option>Pensions &amp; Retirement Planning</option>
+          <option>Corporate Governance</option>
+          <option>Housing &amp; Mortgage Financing Advisory</option>
+          <option>General Enquiry</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Message</label>
+        <textarea class="form-textarea" placeholder="Tell us about your situation or what you need help with..."></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send Message</button>
+      <div class="form-success" id="form-success">
+        Thank you — we have received your message and will be in touch within one business day.
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">Knowledge <span>Initiatives</span></div>
+    <div class="footer-tagline">Pensions · Corporate Governance · Housing Finance</div>
+  </div>
+  <ul class="footer-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#sectors">Sectors</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#">Privacy Policy</a></li>
+  </ul>
+</footer>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  document.getElementById('form-success').style.display = 'block';
+  e.target.querySelector('.form-submit').style.display = 'none';
+}
+
+// Smooth nav hide on scroll
+let lastY = 0;
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  if (y > lastY && y > 120) nav.style.transform = 'translateY(-100%)';
+  else nav.style.transform = 'translateY(0)';
+  lastY = y;
+  nav.style.transition = 'transform 0.3s ease';
+});
+</script>
+</body>
+</html>
